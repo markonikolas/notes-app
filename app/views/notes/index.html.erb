@@ -1,0 +1,11 @@
+<h1>Welcome to Notes app</h1>
+
+<article>
+
+  <% @notes.each do |note| %>
+    <h2> <%= note.title %></h2>
+    <p> <%= note.body %></p>
+    <span><%= note.created_at %></span>
+  <% end %>
+
+</article>
