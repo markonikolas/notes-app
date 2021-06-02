@@ -3,11 +3,18 @@
 </header>
 <main class="px-4 py-8 grid gap-4">
   <% @notes.each do |note| %>
-   <article class="px-2 py-4 border-solid border-2 border-opacity-20 border-gray-500">
-     <h2 class="font-sans text-2xl font-semibold"> <%= note.title %></h2>
+   <article class="px-2 py-4 border-solid border-2 border-opacity-10 border-gray-500 rounded">
+    <div class="flex items-center justify-between gap-x-4">
+      <h2 class="font-sans text-2xl font-semibold"> <%= note.title %></h2>
+      <div class="right-2 top-2 flex gap-x-2">
+        <button class="bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded">edit</button>
+        <button class="bg-red-500 hover:bg-red-dark text-xs text-white font-bold py-1 px-3 rounded">delete</button>
+      </div>
+    </div>
      <div class="py-4">
        <p class="font-sans"> <%= note.body %></p>
      </div>
+
      <hr>
 
      <%
