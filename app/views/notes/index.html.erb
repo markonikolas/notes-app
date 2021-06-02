@@ -5,9 +5,9 @@
   <% @notes.each do |note| %>
     <article class="px-2 py-4 border-solid border-2 border-opacity-10 border-gray-500 rounded">
       <div class="flex items-center justify-between gap-x-4">
-        <h2 class="font-sans text-2xl font-semibold"> <%= link_to "#{note.title}", note_show_path(note) %></h2>
+        <h2 class="font-sans text-2xl font-semibold"> <%= link_to "#{note.title}", note_path(note) %></h2>
         <div class="right-2 top-2 flex gap-x-2">
-          <%= link_to "edit", note_show_path(note), :class => "bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded" %>
+          <%= link_to "Edit", note_edit_path(note), :class => "bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded" %>
           <button class="bg-red-500 hover:bg-red-dark text-xs text-white font-bold py-1 px-3 rounded">delete</button>
         </div>
       </div>

@@ -1,29 +1,31 @@
-<header class="bg-gray-500 p-4 text-white">
-  <h1 class="font-sans text-3xl font-bold">Edit Note</h1>
-</header>
-<main class="px-4 py-8 grid gap-4">
-  <article class="px-2 py-4 border-solid border-2 border-opacity-10 border-gray-500 rounded">
-    <span class="text-xs text-gray-300">edit title</span>
-    <div class="flex items-center justify-between gap-x-4">
-      <h2 class="font-sans text-2xl font-semibold"> <%= @note.title %></h2>
-      <div class="right-2 top-2 flex gap-x-2">
-        <button class="bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded">edit</button>
-        <button class="bg-red-500 hover:bg-red-dark text-xs text-white font-bold py-1 px-3 rounded">delete</button>
-      </div>
+<main class="px-6 py-10 flex flex-col gap-4 h-screen">
+
+  <article class="py-4 flex-1">
+    <%= form_for @note do |field| %>
+    <div>
+      <span class="text-xs text-gray-400 mb-1 block">Edit Title</span>
+      <h2 class=""> <%= field.text_field :title, :class => "p-2 border-2 border-opacity-50 border-solid border-gray-300 font-sans text-5xl font-semibold max-w-full w-full" %></h2>
     </div>
-    <div class="py-4">
-      <span class="text-xs text-gray-300">edit body</span>
-      <p class="font-sans"> <%= @note.body %></p>
+    <div class="py-8">
+      <span class="text-xs text-gray-400 mb-1 block">Edit Body</span>
+      <%= field.text_area :body, :class => "p-2 border-2 border-opacity-50 border-solid border-gray-300 font-sans text-xl max-w-full w-full" %>
     </div>
+  <hr>
+  <%
+    c_date_time = @note.created_at.to_s.split(' ')
+    c_date = c_date_time.first
+    c_time = c_date_time.second
 
-    <hr>
-
-    <%
-      date_time = @note.created_at.to_s.split(' ')
-      date = date_time.first
-      time = date_time.second
-    %>
-    <span class="font-mono text-xs text-gray-500 text-opacity-50">Created: <%= date %> at <%= time %> </span>
-
+    u_date_time = @note.updated_at.to_s.split(' ')
+    u_date = u_date_time.first
+    u_time = u_date_time.second
+  %>
+  <span class="font-mono text-xs text-gray-500 text-opacity-50">Created: <%= c_date %> at <%= c_time %> </span>
+  <span class="font-mono text-xs text-gray-500 text-opacity-50">Last Update: <%= u_date %> at <%= u_time %> </span>
+  <div class="right-2 top-2 flex gap-x-2 mt-4">
+    <%= field.submit :class => "bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded" %>
+    <button class="bg-red-500 hover:bg-red-dark text-xs text-white font-bold py-1 px-3 rounded">delete</button>
+  </div>
+    <% end %>
   </article>
 </main>
