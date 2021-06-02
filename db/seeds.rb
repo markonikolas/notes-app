@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+notes = Note.create([
+	                    {title: 'Welcome to Rails!', body: 'Hello Rails!!!'},
+	                    {title: 'Test Note', body: 'Hello World!!!'}
+                    ])
