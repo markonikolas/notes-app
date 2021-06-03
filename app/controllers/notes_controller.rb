@@ -34,7 +34,13 @@ class NotesController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def destroy
+    @note = find_note
+    @note.destroy
     
+    redirect_to notes_path
   end
   
   private
