@@ -4,11 +4,11 @@ class NotesController < ApplicationController
   end
   
   def show
-    @note = Note.find(params[:id])
+    @note = find_note
   end
   
   def edit
-    @note = Note.find(params[:id])
+    @note = find_note
   end
 
   def new
@@ -26,7 +26,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find(params[:id])
+    @note = find_note
     
     if @note.update(note_params)
       redirect_to @note
@@ -41,5 +41,9 @@ class NotesController < ApplicationController
   
     def note_params
       params.require(:note).permit(:title, :body)
+    end
+
+    def find_note
+      Note.find(params[:id])
     end
 end
