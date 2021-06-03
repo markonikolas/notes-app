@@ -28,6 +28,7 @@
     <span class="font-mono text-xs text-gray-500 text-opacity-50">Last Update: <%= u_date %> at <%= u_time %> </span>
     <div class="right-2 top-2 flex gap-x-2 mt-4">
       <%= field.submit :class => "bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded" %>
+      <%= link_to "Delete", note_path(@note), method: :delete, data: { confirm: 'Are you sure? '}, :class => "bg-red-500 hover:bg-red-dark text-xs text-white font-bold py-1 px-3 rounded" %>
     </div>
 
     <% end %>
