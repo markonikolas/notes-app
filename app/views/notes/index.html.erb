@@ -1,6 +1,4 @@
-<header class="bg-gray-500 p-4 text-white">
-   <h1 class="font-sans text-3xl font-bold">Dashboard</h1>
-</header>
+<%= render 'header', header_title: 'Dashboard' %>
 <main class="px-4 py-8 grid gap-4">
   <% @notes.each do |note| %>
 
