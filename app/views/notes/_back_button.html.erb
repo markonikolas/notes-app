@@ -1,6 +1,5 @@
 <% unless params[:controller] == 'notes' && params[:action] == 'index' %>
-	<div class="flex flex-col items-start m-6 gap-y-4">
-		<%= link_to "Back", notes_path, :class => "block align-start py-1 bg-gray-400 hover:bg-gray-500 text-xs text-white font-bold py-1 px-3 rounded" %>
-		<hr class="w-full">
-	</div>
+	<section class="p-6">
+		<%= link_to "Back", notes_path, :class => "align-start py-1 bg-gray-400 hover:bg-gray-500 text-xs text-white font-bold py-1 px-3 rounded" %>
+	</section>
 <% end %>
