@@ -25,18 +25,18 @@
 				u_time = u_date_time.second
 			%>
 			
-		<section>
-			<span class="block font-mono text-xs text-gray-500 text-opacity-50">Created: <%= c_date %>
-				at <%= c_time %> </span>
-			<span class="font-mono text-xs text-gray-500 text-opacity-50">Last Update: <%= u_date %>
-				at <%= u_time %> </span>
-		</section>
-		
-		<div class="right-2 top-2 flex gap-x-2 mt-4">
-			<%= field.submit :class => "bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded cursor-pointer" %>
+		<section class="flex flex-col gap-y-4">
+			<div>
+				<span class="block font-mono text-xs text-gray-500 text-opacity-50">Created: <%= c_date %>
+					at <%= c_time %> </span>
+				<span class="block font-mono text-xs text-gray-500 text-opacity-50">Last Update: <%= u_date %>
+					at <%= u_time %> </span>
+			</div>
+			<%= field.submit :class => "bg-blue-500 hover:bg-blue-dark text-sm text-white font-bold py-2 px-4
+			rounded cursor-pointer" %>
 			<%= link_to "Delete", note_path(@note), method: :delete, data: { confirm: 'Are you sure? ' },
-			            :class => "bg-red-500 hover:bg-red-dark text-xs text-white font-bold py-1 px-3 rounded" %>
-		</div>
-		<% end %>
+			            :class => "bg-red-500 hover:bg-red-dark text-sm text-white font-bold py-2 px-4 rounded text-center" %>
+		</section>
+	<% end %>
 	</article>
 </main>
