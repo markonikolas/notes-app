@@ -1,8 +1,5 @@
-<header class="bg-gray-500 p-4 text-white flex flex-col items-start gap-y-2">
-  <h1 class="font-sans text-3xl font-bold">New Note</h1>
-</header>
+<%= render 'header', header_title: 'New Note' %>
 <main class="px-6 py-10 flex flex-col gap-4 items-start h-screen">
-  <%= link_to "Back to Notes", notes_path, :class => "bg-gray-400 hover:bg-gray-500 text-xs text-white font-bold py-1 px-3 rounded ase" %>
   <article class="py-4 flex-1">
     <%= form_for @note do |field| %>
 

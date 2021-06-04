@@ -1,8 +1,11 @@
 # This file contains the whole history of the project
 
 ## [Unreleased] - 2021-06-04
+### Changed
+- Move 'go back' button to partial
+- Move header to partial
 ### Added
-- Add back to notes button
+- Add 'go back' button
 
 ## [0.1.1] - 2021-06-03
 ### Fixed
