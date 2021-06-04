@@ -2,9 +2,11 @@
 
 ## [Unreleased] - 2021-06-04
 ### Changed
+- Move 'back button' to 'button' partial
 - Update height of the note on edit and show action
 - Move 'go back' button to partial
 - Move header to partial
+
 ### Added
 - Add 'go back' button
 
