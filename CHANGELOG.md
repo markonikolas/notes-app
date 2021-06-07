@@ -1,5 +1,9 @@
 # This file contains the whole history of the project
 
+## [0.2.1] - 2021-06-07
+### Fixed
+- Fix visual stability on some breakpoints
+
 ## [0.2.0] - 2021-06-04
 ### Changed
 - Update button
