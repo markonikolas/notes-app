@@ -1,6 +1,6 @@
 # This file contains the whole history of the project
 
-## [Unreleased] - 2021-06-04
+## [0.2.0] - 2021-06-04
 ### Changed
 - Update button
 - Update edit note layout
