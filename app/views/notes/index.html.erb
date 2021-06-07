@@ -1,32 +1,35 @@
-<header class="bg-gray-500 p-4 text-white">
-   <h1 class="font-sans text-3xl font-bold">Dashboard</h1>
-</header>
-<main class="px-4 py-8 grid gap-4">
+<%= render 'header', header_title: 'Dashboard' %>
+<main class="grid-cols-layout max-w-7xl mx-auto px-4 py-8 grid gap-4">
+	
   <% @notes.each do |note| %>
+		<article class="px-2 py-4 border-solid border-2 border-opacity-10 border-gray-500 rounded">
+			<div class="flex items-center justify-between gap-x-4">
+				<h2 class="font-sans text-2xl font-semibold"> <%= link_to "#{note.title}", note_path(note) %></h2>
+			</div>
+			<div class="py-4">
+				<p class="font-sans"> <%= note.body %></p>
+			</div>
+			
+			<hr>
+			
+			<%
+				date_time = note.created_at.to_s.split(' ')
+				date = date_time.first
+				time = date_time.second
+			%>
+			
+			<div class="flex flex-wrap justify-between items-center gap-4 mt-3">
+				<span class="font-mono text-xs text-gray-500 text-opacity-50">Created: <%= date %> at <%= time %> </span>
+				<div class="flex gap-x-4">
+					<%= render 'button', value: "Edit", path: edit_note_path(note), type: 'success' %>
+					<%= render 'delete_button', value: "Delete", path: note_path(note), type: 'danger' %>
+				</div>
+			</div>
+		</article>
+	<% end %>
 
-    <article class="px-2 py-4 border-solid border-2 border-opacity-10 border-gray-500 rounded">
-      <div class="flex items-center justify-between gap-x-4">
-        <h2 class="font-sans text-2xl font-semibold"> <%= link_to "#{note.title}", note_path(note) %></h2>
-        <div class="right-2 top-2 flex gap-x-2">
-          <%= link_to "Edit", edit_note_path(note), :class => "bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded" %>
-          <%= link_to "Delete", note_path(note), method: :delete, data: { confirm: 'Are you sure? '}, :class => "bg-red-500 hover:bg-red-dark text-xs text-white font-bold py-1 px-3 rounded" %>
-        </div>
-      </div>
-      <div class="py-4">
-        <p class="font-sans"> <%= note.body %></p>
-      </div>
-
-     <hr>
-
-     <%
-       date_time = note.created_at.to_s.split(' ')
-       date = date_time.first
-       time = date_time.second
-     %>
-     <span class="font-mono text-xs text-gray-500 text-opacity-50">Created: <%= date %> at <%= time %> </span>
-   </article>
-
-  <% end %>
 </main>
+<div class="px-4 py-6">
+	<%= render 'button', value: "New Note", path: new_note_path(@note), type: 'neutral' %>
+</div>
 
-<%= link_to 'New Note', new_note_path(@note), :class => "mx-4 bg-gray-500 hover:bg-gray-dark text-sm text-white font-bold py-2 px-4 rounded align-self-start" %>

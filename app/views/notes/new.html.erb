@@ -1,25 +1,22 @@
-<header class="bg-gray-500 p-4 text-white">
-  <h1 class="font-sans text-3xl font-bold">New Note</h1>
-</header>
-<main class="px-6 py-10 flex flex-col gap-4 h-screen">
-
-  <article class="py-4 flex-1">
-    <%= form_for @note do |field| %>
-
-      <div>
-        <span class="text-xs text-gray-400 mb-1 block">Add Title</span>
-        <h2 class=""> <%= field.text_field :title, :class => "p-2 border-2 border-opacity-50 border-solid border-gray-300 font-sans text-5xl font-semibold max-w-full w-full" %></h2>
-      </div>
-      <div class="py-8">
-        <span class="text-xs text-gray-400 mb-1 block">Add Body</span>
-        <%= field.text_area :body, :class => "p-2 border-2 border-opacity-50 border-solid border-gray-300 font-sans text-xl max-w-full w-full" %>
-      </div>
-      <hr>
-
-      <div class="right-2 top-2 flex gap-x-2 mt-4">
-        <%= field.submit :class => "bg-blue-500 hover:bg-blue-dark text-sm text-white font-bold py-2 px-4 rounded cursor-pointer" %>
-      </div>
-
-    <% end %>
-  </article>
+<%= render 'header', header_title: 'Create new note' %>
+<main class="p-6">
+	<article>
+		<%= form_for @note, :html => { :class => "flex flex-col gap-y-12", :autocomplete => "off" } do |field| %>
+			
+			<section>
+				<span class="text-xs text-gray-400 mb-2 block">Add Title</span>
+				<%= field.text_field :title, :class => "p-2 border-b-2 focus:border-gray-500 focus:outline-none border-opacity-50 border-solid
+        border-gray-300 font-sans text-5xl font-semibold max-w-full w-full" %>
+			</section>
+			
+			<section>
+				<span class="text-xs text-gray-400 mb-2 block">Add Body</span>
+				<%= field.text_area :body, :rows => '10', :class => "p-2 border-2 focus:border-gray-500 focus:outline-none border-opacity-50 border-solid border-gray-300 font-sans text-xl max-w-full w-full" %>
+			</section>
+			
+			<section>
+				<%= render 'button', value: 'Create', type: 'success', field: field %>
+			</section>
+		<% end %>
+	</article>
 </main>
