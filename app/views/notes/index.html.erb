@@ -20,14 +20,16 @@
 			
 			<div class="flex justify-between align-center gap-x-4 mt-3">
 				<span class="font-mono text-xs text-gray-500 text-opacity-50">Created: <%= date %> at <%= time %> </span>
-				<div>
-					<%= link_to "Edit", edit_note_path(note), :class => "mr-4 bg-blue-500 hover:bg-blue-dark text-xs text-white font-bold py-1 px-3 rounded" %>
-					<%= link_to "Delete", note_path(note), method: :delete, data: { confirm: 'Are you sure? ' }, :class => "bg-red-500 hover:bg-red-dark text-xs text-white font-bold py-1 px-3 rounded" %>
+				<div class="flex gap-x-4">
+					<%= render 'button', value: "Edit", path: edit_note_path(note), type: 'success' %>
+					<%= render 'delete_button', value: "Delete", path: note_path(note), type: 'danger' %>
 				</div>
 			</div>
 		</article>
 	
 	<% end %>
+	
+	<%= render 'button', value: "New Note", path: new_note_path(@note), type: 'neutral' %>
 </main>
 
-<%= link_to 'New Note', new_note_path(@note), :class => "mx-4 bg-gray-500 hover:bg-gray-dark text-sm text-white font-bold py-2 px-4 rounded align-self-start" %>
+
