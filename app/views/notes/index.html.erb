@@ -1,5 +1,5 @@
 <%= render 'header', header_title: 'Dashboard' %>
-<main class="grid-cols-layout max-w-7xl mx-auto px-4 py-8 grid gap-4">
+<main class="grid-cols-layout max-w-7xl mx-auto px-4 py-8 grid gap-4 pb-24">
 	
   <% @notes.each do |note| %>
 		<article class="px-2 py-4 border-solid border-2 border-opacity-10 border-gray-500 rounded">
@@ -29,7 +29,7 @@
 	<% end %>
 
 </main>
-<div class="px-4 py-6">
+<div class="px-4 py-6 fixed bottom-0 left-0 bg-white border-t-2 w-full">
 	<%= render 'button', value: "New Note", path: new_note_path(@note), type: 'neutral' %>
 </div>
 
