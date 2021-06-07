@@ -32,10 +32,8 @@
 				<span class="block font-mono text-xs text-gray-500 text-opacity-50">Last Update: <%= u_date %>
 					at <%= u_time %> </span>
 			</div>
-			<%= field.submit :class => "bg-blue-500 hover:bg-blue-dark text-sm text-white font-bold py-2 px-4
-			rounded cursor-pointer" %>
-			<%= link_to "Delete", note_path(@note), method: :delete, data: { confirm: 'Are you sure? ' },
-			            :class => "bg-red-500 hover:bg-red-dark text-sm text-white font-bold py-2 px-4 rounded text-center" %>
+			<%= render 'button', value: 'Create', type: 'success', field: field %>
+			<%= render 'delete_button', value: "Delete", path: note_path(@note), type: 'danger' %>
 		</section>
 	<% end %>
 	</article>

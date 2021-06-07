@@ -1,0 +1,20 @@
+<%
+	color = ''
+	
+	case type
+	when 'success'
+		color = 'blue'
+	when 'danger'
+		color = 'red'
+	else
+		color = 'gray'
+	end
+%>
+
+<% class_name = "block w-24 p-2 text-sm text-center font-bold rounded text-white bg-#{color}-400 hover:bg-#{color}-500 cursor-pointer" %>
+
+<% if local_assigns[:field].nil? %>
+	<%= link_to "#{value}", "#{path}", :class => class_name %>
+<% else %>
+	<%= field.submit :class => class_name %>
+<% end %>

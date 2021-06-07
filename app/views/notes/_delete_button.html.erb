@@ -1,0 +1,16 @@
+<%
+	color = ''
+	
+	case type
+	when 'success'
+		color = 'blue'
+	when 'danger'
+		color = 'red'
+	else
+		color = 'gray'
+	end
+%>
+
+<% class_name = "block w-24 p-2 text-sm text-center font-bold rounded text-white bg-#{color}-400 hover:bg-#{color}-500 cursor-pointer" %>
+
+<%= link_to "#{value}", "#{path}", :class => class_name, method: :delete, data: { confirm: "Are you sure? You can not undo this." } %>
