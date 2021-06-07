@@ -394,6 +394,7 @@ module.exports = {
       10: 'repeat(10, minmax(0, 1fr))',
       11: 'repeat(11, minmax(0, 1fr))',
       12: 'repeat(12, minmax(0, 1fr))',
+      'layout': 'repeat(auto-fit, minmax(300px, 1fr))',
     },
     gridTemplateRows: {
       none: 'none',
