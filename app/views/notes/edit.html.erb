@@ -11,7 +11,7 @@
 			
 			<section>
 				<label for="body" class="text-xs text-gray-400 mb-2 block">Edit Body</label>
-				<%= field.text_area :body, :id => 'body', :rows => '10', :class => "p-2 border-2 focus:border-gray-500 focus:outline-none
+				<%= field.text_area :body, :id => 'body', :rows => '4', :class => "p-2 border-2 focus:border-gray-500 focus:outline-none
 				border-opacity-50 border-solid border-gray-300 font-sans text-xl max-w-full w-full" %>
 			</section>
 			
@@ -32,8 +32,10 @@
 				<span class="block font-mono text-xs text-gray-500 text-opacity-50">Last Update: <%= u_date %>
 					at <%= u_time %> </span>
 			</div>
-			<%= render 'button', value: 'Create', type: 'success', field: field %>
-			<%= render 'delete_button', value: "Delete", path: note_path(@note), type: 'danger' %>
+			<div class="flex gap-x-4">
+				<%= render 'button', value: 'Create', type: 'success', field: field %>
+				<%= render 'delete_button', value: "Delete", path: note_path(@note), type: 'danger' %>
+			</div>
 		</section>
 	<% end %>
 	</article>
