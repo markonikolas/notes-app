@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 ### Changed
-- Tweak buttons
+- Reuse and modify buttons
 
 ## [0.2.1] - 2021-06-07
 ### Fixed

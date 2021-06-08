@@ -22,7 +22,7 @@
 				<span class="font-mono text-xs text-gray-500 text-opacity-50">Created: <%= date %> at <%= time %> </span>
 				<div class="flex gap-x-4">
 					<%= render 'button', value: "Edit", path: edit_note_path(note), type: 'success' %>
-					<%= render 'delete_button', value: "Delete", path: note_path(note), type: 'danger' %>
+					<%= render 'button', value: "Delete", path: note_path(note), type: 'danger' %>
 				</div>
 			</div>
 		</article>
