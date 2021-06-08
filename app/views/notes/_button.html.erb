@@ -1,6 +1,5 @@
 <%
 	color = ''
-	
 	case type
 	when 'success'
 		color = 'blue'
@@ -12,7 +11,6 @@
 %>
 
 <% class_name = "block w-24 p-2 text-sm text-center font-bold rounded text-white bg-#{color}-400 hover:bg-#{color}-500 cursor-pointer" %>
-
 
 <% if value.downcase == 'delete' %>
 	<%= link_to "#{value}", "#{path}", :class => class_name, method: :delete, data: { confirm: "Are you sure? You can not undo this." } %>
