@@ -1,5 +1,9 @@
 # This file contains the whole history of the project
 
+## [Unreleased]
+### Changed
+- Update new note button
+
 ## [0.2.1] - 2021-06-07
 ### Fixed
 - Fix visual stability on some breakpoints
