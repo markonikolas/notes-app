@@ -4,6 +4,8 @@
 ### Changed
 - Update Header on large devices
 - Reuse and modify buttons
+### Added
+- Add tags
 
 ## [0.2.1] - 2021-06-07
 ### Fixed
