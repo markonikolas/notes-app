@@ -1,5 +1,12 @@
 # This file contains the whole history of the project
 
+## [0.3.0] - 2021-06-10
+### Changed
+- Update Header on large devices
+- Reuse and modify buttons
+### Added
+- Add tags
+
 ## [0.2.1] - 2021-06-07
 ### Fixed
 - Fix visual stability on some breakpoints

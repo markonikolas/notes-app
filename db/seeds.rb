@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 notes = Note.create([
-	                    {title: 'Welcome to Rails!', body: 'Hello Rails!!!'},
-	                    {title: 'Test Note', body: 'Hello World!!!'}
+	                    { title: 'Welcome to Rails!', body: 'Hello Rails!!!' },
+	                    { title: 'Test Note', body: 'Hello World!!!' }
                     ])
+tag   = Tag.create([{ name: 'Rails' }, { name: 'Ruby' }, { name: 'HTML' }])

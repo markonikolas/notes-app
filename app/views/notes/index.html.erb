@@ -1,5 +1,5 @@
 <%= render 'header', header_title: 'Dashboard' %>
-<main class="grid-cols-layout max-w-7xl mx-auto px-4 py-8 grid gap-4 pb-24">
+<main class="grid-cols-layout max-w-7xl mx-auto px-4 pb-8 grid gap-4">
 	
   <% @notes.each do |note| %>
 		<article class="px-2 py-4 border-solid border-2 border-opacity-10 border-gray-500 rounded">
@@ -22,14 +22,12 @@
 				<span class="font-mono text-xs text-gray-500 text-opacity-50">Created: <%= date %> at <%= time %> </span>
 				<div class="flex gap-x-4">
 					<%= render 'button', value: "Edit", path: edit_note_path(note), type: 'success' %>
-					<%= render 'delete_button', value: "Delete", path: note_path(note), type: 'danger' %>
+					<%= render 'button', value: "Delete", path: note_path(note), type: 'danger' %>
 				</div>
 			</div>
 		</article>
 	<% end %>
 
 </main>
-<div class="px-4 py-6 fixed bottom-0 left-0 bg-white border-t-2 w-full">
-	<%= render 'button', value: "New Note", path: new_note_path(@note), type: 'neutral' %>
-</div>
+
 
